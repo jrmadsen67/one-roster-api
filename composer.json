@@ -1,0 +1,53 @@
+{
+    "name": "jrmadsen67/one-roster-api",
+    "description": "One Roster API Client",
+    "keywords": [
+        "jrmadsen67",
+        "one-roster-api"
+    ],
+    "homepage": "https://github.com/jrmadsen67/one-roster-api",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Jeff Madsen",
+            "email": "jrmadsen67@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.1"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^4.0",
+        "phpunit/phpunit": "^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Jrmadsen67\\OneRosterApi\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Jrmadsen67\\OneRosterApi\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Jrmadsen67\\OneRosterApi\\OneRosterApiServiceProvider"
+            ],
+            "aliases": {
+                "OneRosterApi": "Jrmadsen67\\OneRosterApi\\OneRosterApiFacade"
+            }
+        }
+    }
+}
