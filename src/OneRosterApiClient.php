@@ -19,8 +19,8 @@ class OneRosterApiClient implements OneRosterApi
         $stack = HandlerStack::create();
 
         $middleware = new Oauth1([
-            'consumer_key'    => 'my_key',
-            'consumer_secret' => 'my_secret',
+            'consumer_key'    => config('consumer_key'),
+            'consumer_secret' => config('consumer_secret'),
         ]);
         $stack->push($middleware);
 
