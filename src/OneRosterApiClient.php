@@ -24,19 +24,25 @@ class OneRosterApiClient implements OneRosterApi
         ]);
         $stack->push($middleware);
 
+//        $this->client = new Client([
+//            'base_uri' => 'https://or-ri.imsglobal.org/ims/oneroster/v1p1',
+//            'headers' => [
+////                'Authorization' => 'Bearer '.$this->token,
+//                'Content-Type' => 'application/json; charset=utf-8',
+//                'handler' => $stack,
+//                'auth' => 'oauth'
+//            ],
+//        ]);
+
         $this->client = new Client([
-            'base_uri' => 'https://or-ri.imsglobal.org/ims/oneroster/v1p1',
-            'headers' => [
-//                'Authorization' => 'Bearer '.$this->token,
-                'Content-Type' => 'application/json; charset=utf-8',
-                'handler' => $stack,
-                'auth' => 'oauth'
-            ],
+            'base_uri' => 'https://or-ri.imsglobal.org/ims/oneroster/v1p1/',
+            'handler' => $stack,
+            'auth' => 'oauth'
         ]);
     }
 
     public function createParameterString($offset, $limit){
-        return '?' . http_build_query(['offset' => $offset, 'limit' => $limit]);
+        return '?' . http_build_query(['offset' => $offset, 'limit' => $limit, 'filter' => 'status="active"']);
     }
 
     public function getAllAcademicSessions($offset=0, $limit=100){
