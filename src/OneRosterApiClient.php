@@ -19,8 +19,8 @@ class OneRosterApiClient implements OneRosterApi
 
         $middleware = new Oauth1([
             'signature_method' => Oauth1::SIGNATURE_METHOD_HMACSHA256,
-            'consumer_key'    => config('consumer_key'),
-            'consumer_secret' => config('consumer_secret'),
+            'consumer_key'    => config('one-roster-api.consumer_key'),
+            'consumer_secret' => config('one-roster-api.consumer_secret'),
             'token'           => '',
             'token_secret'    => '',
         ]);
@@ -43,7 +43,7 @@ class OneRosterApiClient implements OneRosterApi
         ]);
     }
 
-    public function createParameterString($offset, $limit, $filter){
+    public function createParameterString($offset, $limit, $filter = 'status="active"'){
         return '?' . http_build_query(['offset' => $offset, 'limit' => $limit, 'filter' => $filter]);
     }
 

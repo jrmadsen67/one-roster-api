@@ -12,7 +12,7 @@ class OneRosterApiServiceProvider extends ServiceProvider
     public function register()
     {
         // Automatically apply the package configuration
-        $this->mergeConfigFrom(__DIR__.'/../config/config.php', 'one-roster-api');
+        $this->mergeConfigFrom(__DIR__.'/../config/one-roster-api.php', 'one-roster-api');
 
         $this->app->bind(OneRosterApi::class, function () {
             // if we're not on production then swap out the real autopilot for the dummy one
