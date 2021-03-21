@@ -21,8 +21,8 @@ class OneRosterApiClient implements OneRosterApi
             'signature_method' => Oauth1::SIGNATURE_METHOD_HMACSHA256,
             'consumer_key'    => config('one-roster-api.consumer_key'),
             'consumer_secret' => config('one-roster-api.consumer_secret'),
-            'token'           => '',
-            'token_secret'    => '',
+            'token_secret'    => config('one-roster-api.token_secret'),
+            'debug' => config('one-roster-api.debug'),
         ]);
         $stack->push($middleware);
 
