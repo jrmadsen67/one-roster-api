@@ -16,7 +16,9 @@
         }
     ],
     "require": {
-        "php": "^7.1"
+        "php": "^7.1",
+        "guzzlehttp/guzzle": "^6.5.5|^7.0.1",
+        "guzzlehttp/oauth-subscriber": "0.4.*"
     },
     "require-dev": {
         "orchestra/testbench": "^4.0",
